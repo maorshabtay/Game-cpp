@@ -3,7 +3,6 @@
 M16::M16()
 {
 }
-HELLO MAOR YATAHAT
 
 M16::~M16()
 {
