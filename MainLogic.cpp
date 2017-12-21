@@ -9,7 +9,9 @@ int main() {
 	Point2D* p = new Point2D(34.2, 234.4);
 	cout << p->getY() << endl;
 	Weapon* w  = new Uzi();
-	cout << to_string(typeid(w).name);
+
+
+	HELO HELLO
 	cout << w->getMyInstance() << endl;
 	system("pause");
 	return 0;
