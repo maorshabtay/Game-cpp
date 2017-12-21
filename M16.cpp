@@ -1,12 +1,11 @@
 #include "M16.h"
 
-M16::M16()
+M16::M16() : Weapon(50,1,false)
 {
+
 }
 
-M16::~M16()
-{
-}
+
 
 std::string M16::getMyInstance() {
 

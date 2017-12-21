@@ -1,9 +1,6 @@
 #include "Weapon.h"
 
-
-
-Weapon::Weapon()
+Weapon::Weapon(int power,int shooting,bool isHeavy) : power{power}, shooting{shooting}, isHeavy{isHeavy}
 {
-	
 }
 

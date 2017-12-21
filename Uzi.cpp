@@ -1,13 +1,10 @@
 #include "Uzi.h"
 
-Uzi::Uzi()
+Uzi::Uzi() : Weapon(40, 3, false)
 {
+
 }
 
-
-Uzi::~Uzi()
-{
-}
 
 
 std::string Uzi::getMyInstance()

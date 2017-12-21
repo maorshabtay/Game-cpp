@@ -3,8 +3,9 @@
 
 class Missle : public Weapon {
 
+public:
+	Missle();
 	std::string getMyInstance();
-
 
 
 

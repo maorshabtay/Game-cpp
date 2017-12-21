@@ -3,10 +3,9 @@
 class Weapon
 {
 public:
-	Weapon()  ;
+	Weapon(int power,int shooting,bool isHeavy) ;
 	virtual std::string getMyInstance() = 0;
-	
-protected:
+
 	int power;
 	int shooting;
 	bool isHeavy;
