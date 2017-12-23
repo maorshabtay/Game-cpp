@@ -8,12 +8,13 @@ class Point2D {
 		double y;
 			
 	public:
+		double getDistFrom(const Point2D & aPoint) const;
 		Point2D(double x, double y);
 		
 
-		double getX();
+		double getX() const;
 		
-		double getY();
+		double getY() const;
 
 		void setX(double newX);
 		

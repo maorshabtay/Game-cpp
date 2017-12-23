@@ -5,6 +5,6 @@ class BodyArmor : public Defence {
 public:
 	BodyArmor(double power);
 	double def(Weapon* weapon);
-
+	std::string getMyInstance();
 
 };

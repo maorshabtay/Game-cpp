@@ -6,6 +6,11 @@
 class ShieldArmor : public Defence{
 
 public:
+
+
+	std::string getMyInstance();
+		
+
 	ShieldArmor(double power);
 	double def(Weapon* weapon);
 
