@@ -6,7 +6,7 @@
 #include "ShieldArmor.h"
 
 class Soldier {
-private:
+public:
 	int _life;
 	int _speed;
 	Weapon* _myWeapon;
@@ -26,17 +26,21 @@ public:
 		//ctor
 		builder(int life,  int speed)
 			: _life(life), _speed(speed)
-		{}
+		{
+			Weapon* _myWeapon = nullptr;
+			BodyArmor* _myBodyArmor = nullptr;
+			ShieldArmor* _myShieldArmor = nullptr;
+		}
 		//set methods
-		builder& weapon(Weapon* myWeapon) {
+		builder& weapon(Weapon* &myWeapon) {
 			_myWeapon = myWeapon;
 			return *this;
 		}
-		builder& bodyArmor(BodyArmor* myBodyArmor) {
+		builder& bodyArmor(BodyArmor* &myBodyArmor) {
 			_myBodyArmor = myBodyArmor;
 			return *this;
 		}
-		builder& shieldArmor(ShieldArmor* myShieldArmor) {
+		builder& shieldArmor(ShieldArmor* &myShieldArmor) {
 			_myShieldArmor = myShieldArmor;
 		}
 		Soldier* build() {
