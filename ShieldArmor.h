@@ -8,7 +8,7 @@ class ShieldArmor : public Defence{
 public:
 
 
-	std::string getMyInstance();
+	const std::string getMyInstance();
 		
 
 	ShieldArmor(double power);

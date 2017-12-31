@@ -9,7 +9,7 @@ double ShieldArmor::def(Weapon* weapon) {
 
 }
 
-std::string ShieldArmor::getMyInstance() {
-	return typeid(this).name;
+const std::string ShieldArmor::getMyInstance() {
+	return typeid(this).name();
 
 }

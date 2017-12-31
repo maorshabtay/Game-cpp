@@ -3,8 +3,8 @@
 
 BodyArmor::BodyArmor(double power) : Defence( power ) {}
 
-std::string BodyArmor::getMyInstance() {
-	return typeid(this).name;
+const std::string BodyArmor::getMyInstance() {
+	return typeid(this).name();
 
 }
 double BodyArmor::def(Weapon* weapon) {

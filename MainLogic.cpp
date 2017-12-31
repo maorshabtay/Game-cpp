@@ -2,6 +2,7 @@
 #include "Weapon.h"
 #include "Uzi.h"
 #include "iostream"
+#include <typeinfo>   
 
 using namespace std;
 

@@ -7,6 +7,4 @@ public:
 	Missle();
 	std::string getMyInstance();
 
-
-
 };
