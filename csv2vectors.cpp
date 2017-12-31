@@ -1,3 +1,4 @@
+#pragma once
 #include <fstream>
 #include <stdio.h>
 #include <string.h>
@@ -7,41 +8,44 @@
 #include<algorithm>
 #include<strstream>
 #include <vector>
+#include "csv2vectors.h"
 using namespace std;
 
 
-std::vector <std::vector<std::string>> csvToVector(std::string file) {
+std::vector <std::vector<std::string>>* csv2vector::csvToVector(std::string file) {
 	std::ifstream csv(file);
 	std::string line;
-	std::vector <std::vector<std::string>> items;
-
+	items = new std::vector <std::vector<std::string>>;
 	if (csv.is_open()) {
 		for (std::string row_line; std::getline(csv, row_line);)
 		{
-			items.emplace_back();
+			
+			items->emplace_back();
+			
 			std::istringstream row_stream(row_line);
 			for (std::string column; std::getline(row_stream, column, ',');)
-				items.back().push_back(column);
+				items->back().push_back(column);
 		}
 	}
 	else {
 		cout << "Unable to open file";
 	}
+	
 	return items;
 }
 
-std::vector <int> VectorToInt(std::vector <std::vector<std::string>> &items, int column, int   row, int setRow = 1) {
-	std::vector <int> vecInt;
+std::vector <int>* csv2vector::VectorToInt(std::vector <std::vector<std::string>> items, int column, int   row, int setRow ) {
+	std::vector <int>* vecInt = new std::vector <int>;
 	int r = setRow;
 		for (; row > r; ++r)
-			vecInt.emplace_back(std::stoi(items[column][r]));
+			vecInt->emplace_back(std::stoi(items[column][r]));
 	return vecInt;
 }
-std::vector <std::string> VectorToString(std::vector <std::vector<std::string>> &items, int column, int   row , int setRow=1) {
-	std::vector <std::string> vecString;
+std::vector <std::string>* csv2vector::VectorToString(std::vector <std::vector<std::string>> items, int column, int   row , int setRow) {
+	std::vector <std::string>* vecString = new std::vector<std::string>;
 	int r = setRow;
 	for (; row > r; ++r)
-		vecString.emplace_back((items[column][r]));
+		vecString->emplace_back((items[column][r]));
 	return vecString;
 }
 
@@ -56,10 +60,10 @@ void stringToPoint(std::string s) {
 	std::cout << y << std::endl;
 }
 
-
-int main() {
-	std::vector <std::vector<std::string>> items = csvToVector("init_file_example.csv");
-	for (const std::vector<string> &v : items)
+csv2vector::csv2vector(){
+	items = csvToVector("init_file_example.csv");
+/*	 Print All file
+	for (const std::vector<string> &v : *items)
 	{
 		for (string x : v) {
 			std::cout << x << ' ';
@@ -67,45 +71,71 @@ int main() {
 		std::cout << std::endl;
 
 	}
+	*/
+	map = VectorToInt(*items, 1, 3);
+	std::vector <int> vecNumPlayer = *VectorToInt(*items, 2, 2);
+	numPlayer = vecNumPlayer[0];
+	std::vector <int> vecNumSoldier = *VectorToInt(*items, 3, 2);
+	numSoldier = vecNumSoldier[0];
+	
 
-	std::vector <int> map = VectorToInt(items, 1, 3);
-	std::vector <int> numPlayers = VectorToInt(items, 2, 2);
-	std::vector <int> numSoldiers = VectorToInt(items, 3, 2);
-	std::vector <std::string>typePlayers;
-
-	int i = 0, j = 0, k = 0;
-	for (i = 0; numPlayers[0] > i; ++i) {
-		typePlayers.emplace_back(VectorToString(items, (4 + (numSoldiers[0] + 1)*i), 2)[0]);
+	
+	unsigned i = 0, j = 0, k = 0;
+	typePlayer = new std::vector <std::string>;
+	for (i = 0; numPlayer > i; ++i) {
+		typePlayer->emplace_back(VectorToString(*items, (4 + (numSoldier + 1)*i), 2)[0][0]);
 	}
+
+
 
 	// typeSoldiers 2D vector row:player, column:soldier
-	std::vector<std::vector<std::vector<std::string>>> typeSoldiers;
+	//std::vector<std::vector<std::vector<std::string>>> typeSoldiers;
+	AllSoldiers = new std::vector<std::vector<std::string>*>;
+	(*AllSoldiers).resize(numPlayer*numSoldier);
 
-	typeSoldiers.resize(numPlayers[0]);
-	for (i = 0; numPlayers[0] > i; ++i) {
-		typeSoldiers[i].resize(numSoldiers[0]);
-		for (j = 0; numSoldiers[0] > j; ++j) {
-			typeSoldiers[i][j] = (VectorToString(items, 4*(i+1)+(j+1), 3,0));
+	for (i = 0; numPlayer > i; ++i) {
+		for (j = 0; numSoldier > j; ++j) {
+			(*AllSoldiers)[k] = new std::vector<std::string>;
+			(*AllSoldiers)[k][0] = (*items)[(4 * (i + 1) + (j + 1))];
+			k++;
+
 		}
 	}
-	std::vector <std::vector <std::string>> object;
-
-	for (i = (4 + (numPlayers[0] * (numSoldiers[0] + 1)) + 1); items.size() > i; ++i) {
-		object.emplace_back(items[i]);
+	/* Print Soldiers
+	for (std::vector<std::string>* x : *AllSoldiers) {
+		for (std::string s : *x) {
+			cout << s << " ";
+		}
+		cout << endl;
+	}*/
+	
+	k = 0;
+	Objects = new std::vector <std::vector <std::string>*>;
+	(*Objects).resize((*items).size()-5-(numPlayer*(numSoldier+1)));
+	for ( i = (4 + (numPlayer * (numSoldier + 1)) + 1) ; (*items).size() > i ; ++i) {
+		(*Objects)[k] = new std::vector<std::string>;
+		(*Objects)[k][0] = (*items)[i];
+		k++;
 	}
-	/*
-		for (std::vector<std::string> x : object) {
-			for (std::string y : x) {
-				std::cout << i << y << ' ' ;
+	
+	/*	Print Object
+		for (std::vector<std::string>* x : *Objects) {
+			for (std::string y : *x) {
+				std::cout <<  y << ' ' ;
 			}
 			std::cout << std::endl;
 		}
 		std::cout << std::endl;
 	*/
-	//	stringToPoint(typeSoldiers[0][0][1]);
-	//std::cout << std::to_string((4 + (numPlayers[0] * (numSoldiers[0] + 1)) + 1))  <<std::endl;
-	//std::cout << std::to_string(items.size()) << std::endl;
-	system("pause");
 
-return 0;
+	
+	
+	system("pause");
+	
+}
+int main() {
+
+	csv2vector c ;
+	
+	return 0;
 }
