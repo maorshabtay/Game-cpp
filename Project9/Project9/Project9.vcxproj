@@ -111,13 +111,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="AllcoateObjects.h" />
     <ClInclude Include="AllocateClass.h" />
     <ClInclude Include="BodyArmor.h" />
-    <ClInclude Include="builder.h" />
     <ClInclude Include="csv2player.h" />
-    <ClInclude Include="csv2vectors.h" />
+    <ClInclude Include="csv2vector.h" />
     <ClInclude Include="Defence.h" />
     <ClInclude Include="FileControl.h" />
+    <ClInclude Include="AllcoateSoldiers.h" />
     <ClInclude Include="initItemPoint.h" />
     <ClInclude Include="M16.h" />
     <ClInclude Include="Map.h" />
@@ -129,14 +130,15 @@
     <ClInclude Include="ShieldArmor.h" />
     <ClInclude Include="Sniper.h" />
     <ClInclude Include="Soldier.h" />
+    <ClInclude Include="Solid.h" />
     <ClInclude Include="Uzi.h" />
     <ClInclude Include="Weapon.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AllcoateObjects.cpp" />
     <ClCompile Include="BodyArmor.cpp" />
-    <ClCompile Include="builderExample.cpp" />
     <ClCompile Include="csv2player.cpp" />
-    <ClCompile Include="csv2vectors.cpp" />
+    <ClCompile Include="csv2vector.cpp" />
     <ClCompile Include="Defence.cpp" />
     <ClCompile Include="initItemPoint.cpp" />
     <ClCompile Include="M16.cpp" />
@@ -149,6 +151,8 @@
     <ClCompile Include="ShieldArmor.cpp" />
     <ClCompile Include="Sniper.cpp" />
     <ClCompile Include="Soldier.cpp" />
+    <ClCompile Include="Solid.cpp" />
+    <ClCompile Include="AllcoateSoldiers.cpp" />
     <ClCompile Include="Uzi.cpp" />
     <ClCompile Include="Weapon.cpp" />
   </ItemGroup>

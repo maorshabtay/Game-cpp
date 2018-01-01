@@ -19,6 +19,7 @@ class Soldier {
 		virtual Point2D walk(Point2D from, Point2D to) = 0;
 		virtual const std::string getMyInstance() = 0;
 
+
 	protected:
 
 	Soldier(int maxLife, int life, int speed, Weapon* myWeapon, BodyArmor* myBodyArmor, ShieldArmor* myShieldArmor);

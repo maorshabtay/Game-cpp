@@ -24,13 +24,7 @@
     <ClInclude Include="BodyArmor.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="builder.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="csv2player.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="csv2vectors.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Defence.h">
@@ -75,6 +69,18 @@
     <ClInclude Include="Uzi.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Solid.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AllcoateObjects.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="csv2vector.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AllcoateSoldiers.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Missle.cpp">
@@ -110,13 +116,7 @@
     <ClCompile Include="BodyArmor.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="builderExample.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="csv2player.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="csv2vectors.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Defence.cpp">
@@ -129,6 +129,18 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="MainLogic.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Solid.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AllcoateObjects.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="csv2vector.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AllcoateSoldiers.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
