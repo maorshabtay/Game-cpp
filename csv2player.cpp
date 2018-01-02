@@ -66,10 +66,10 @@ csv2player::csv2player() {
 	
 //	csvToPoint(playerMovesString);
 }
-
+/*
 int main() {
 	csv2player c;
 	system("pause");
 	return 0;
-}
+}*/
 #endif

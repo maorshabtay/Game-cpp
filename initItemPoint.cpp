@@ -71,7 +71,7 @@ Point2D* initItemPoint::stringToPoint(std::string s) {
 }
 
 
-
+/*
 int main() {
 	csv2vector* ccsv = new csv2vector();
 	initItemPoint c (ccsv);
@@ -79,4 +79,4 @@ int main() {
 	system("pause");
 	return 0;
 }
-
+*/

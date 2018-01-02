@@ -8,9 +8,10 @@ class Point2D {
 		double y;
 			
 	public:
-		double getDistFrom(const Point2D & aPoint) const;
+		
 		Point2D(double x, double y);
 		
+		Point2D(const Point2D&);
 
 		double getX() const;
 		
@@ -20,6 +21,7 @@ class Point2D {
 		
 		void setY(double newY);
 
+		double getDistFrom( Point2D & aPoint) ;
 };
 
 

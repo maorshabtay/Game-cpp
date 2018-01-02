@@ -6,6 +6,7 @@
 #include <string>
 
 class Soldier {
+	
 	public:
 
 		int maxLife;
@@ -15,9 +16,14 @@ class Soldier {
 		BodyArmor* myBodyArmor;
 		ShieldArmor* myShieldArmor;
 
-		virtual void attack(double distance) = 0;
+		
+
+	
+
+		virtual int attack(double distance) = 0;
 		virtual Point2D walk(Point2D from, Point2D to) = 0;
 		virtual const std::string getMyInstance() = 0;
+
 
 	protected:
 

@@ -8,7 +8,7 @@
 #include<algorithm>
 #include<strstream>
 #include <vector>
-#include "csv2vectors.h"
+#include "csv2vector.h"
 using namespace std;
 
 
@@ -130,7 +130,7 @@ csv2vector::csv2vector(){
 
 	
 	
-	system("pause");
+	//system("pause");
 	
 }/*
 int main() {
