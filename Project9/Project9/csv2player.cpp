@@ -52,17 +52,17 @@ Point2D* csv2player::stringToPoint(std::string s) {
 
 
 
-csv2player::csv2player() {
-	playerMovesPoint = csvToVector("player1_file_example.csv");
+csv2player::csv2player(std::string s) {
+	playerMovesPoint = csvToVector(s);
 	//	 Print All file
-	for ( std::vector<Point2D> v : *playerMovesPoint)
+/*	for ( std::vector<Point2D> v : *playerMovesPoint)
 	{
 		for (Point2D x : v) {
 		std::cout << "[" << x.getX() << "," << x.getY() <<"] " << ' ';
 		}
 	std::cout << std::endl;
 
-	}
+	}*/
 	
 //	csvToPoint(playerMovesString);
 }

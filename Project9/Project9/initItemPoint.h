@@ -4,13 +4,16 @@
 #include <string>
 
 class initItemPoint {
-protected:
+public:
 	csv2vector* _csv;
 	int numPlayer;
 	int numSoldier;
 	std::vector<std::vector<Point2D>*>* players;
 	std::vector<Point2D>* objects;
-public:
+	std::vector<Point2D>* weaponsPoint;
+	std::vector<Point2D>* armorPoint;
+
+
 
 	initItemPoint(csv2vector* const);
 	Point2D* stringToPoint(std::string s);

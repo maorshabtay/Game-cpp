@@ -1,11 +1,17 @@
 #include "Point2D.h"
 #include <cmath>
 
-Point2D::Point2D(double x, double y) : x( x ), y( y )  {}
+Point2D::Point2D(double x, double y) : x(x), y(y) {}
 
 Point2D::Point2D(const Point2D& other)
-	:x(other.getX()),	y(other.getY())
-{}
+	: x(other.getX()), y(other.getY())
+{
+}
+
+/*std::string Point2D::Visit(Visitor* vis) {
+	return new TaxVisitor->visit(*this);
+
+}*/
 
 double Point2D::getX() const {
 	return  x;
@@ -21,7 +27,7 @@ void Point2D::setX(double newX) {
 void Point2D::setY(double newY) {
 	y = newY;
 }
-double Point2D::getDistFrom( Point2D & aPoint) 
+double Point2D::getDistFrom(Point2D & aPoint)
 {
 	const double x_diff = getX() - aPoint.getX();
 	const double y_diff = getY() - aPoint.getY();

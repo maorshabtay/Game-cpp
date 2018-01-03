@@ -117,6 +117,7 @@
     <ClInclude Include="csv2player.h" />
     <ClInclude Include="csv2vector.h" />
     <ClInclude Include="Defence.h" />
+    <ClInclude Include="Element.h" />
     <ClInclude Include="FileControl.h" />
     <ClInclude Include="AllcoateSoldiers.h" />
     <ClInclude Include="initItemPoint.h" />
@@ -125,13 +126,18 @@
     <ClInclude Include="Missle.h" />
     <ClInclude Include="Paramedic.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="playersStep.h" />
     <ClInclude Include="Point2D.h" />
     <ClInclude Include="RegularSoldier.h" />
     <ClInclude Include="ShieldArmor.h" />
     <ClInclude Include="Sniper.h" />
     <ClInclude Include="Soldier.h" />
     <ClInclude Include="Solid.h" />
+    <ClInclude Include="startGame.h" />
+    <ClInclude Include="stepSoldier.h" />
+    <ClInclude Include="TaxVisitor.h" />
     <ClInclude Include="Uzi.h" />
+    <ClInclude Include="Visitor.h" />
     <ClInclude Include="Weapon.h" />
   </ItemGroup>
   <ItemGroup>
@@ -143,9 +149,11 @@
     <ClCompile Include="initItemPoint.cpp" />
     <ClCompile Include="M16.cpp" />
     <ClCompile Include="MainLogic.cpp" />
+    <ClCompile Include="Map.cpp" />
     <ClCompile Include="Missle.cpp" />
     <ClCompile Include="Paramedic.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="playerStep.cpp" />
     <ClCompile Include="Point2D.cpp" />
     <ClCompile Include="RegularSoldier.cpp" />
     <ClCompile Include="ShieldArmor.cpp" />
@@ -153,6 +161,9 @@
     <ClCompile Include="Soldier.cpp" />
     <ClCompile Include="Solid.cpp" />
     <ClCompile Include="AllcoateSoldiers.cpp" />
+    <ClCompile Include="startGame.cpp" />
+    <ClCompile Include="stepSoldier.cpp" />
+    <ClCompile Include="TaxVisitor.cpp" />
     <ClCompile Include="Uzi.cpp" />
     <ClCompile Include="Weapon.cpp" />
   </ItemGroup>

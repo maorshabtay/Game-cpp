@@ -9,6 +9,7 @@
 #include<strstream>
 #include <vector>
 #include "csv2vector.h"
+
 using namespace std;
 
 
@@ -60,8 +61,8 @@ void stringToPoint(std::string s) {
 	std::cout << y << std::endl;
 }
 
-csv2vector::csv2vector(){
-	items = csvToVector("init_file_example.csv");
+csv2vector::csv2vector(std::string s){
+	items = csvToVector(s);
 /*	 Print All file
 	for (const std::vector<string> &v : *items)
 	{
@@ -70,8 +71,8 @@ csv2vector::csv2vector(){
 		}
 		std::cout << std::endl;
 
-	}
-	*/
+	}*/
+	
 	map = VectorToInt(*items, 1, 3);
 	std::vector <int> vecNumPlayer = *VectorToInt(*items, 2, 2);
 	numPlayer = vecNumPlayer[0];

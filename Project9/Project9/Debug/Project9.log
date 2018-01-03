@@ -1,2 +1,4 @@
-﻿  AllcoateSoldiers.cpp
+﻿  startGame.cpp
+c:\users\maor shabtay\source\repos\project9\project9\startgame.cpp(13): warning C4018: '<': signed/unsigned mismatch
+c:\users\maor shabtay\source\repos\project9\project9\startgame.cpp(14): warning C4018: '<': signed/unsigned mismatch
   Project9.vcxproj -> C:\Users\maor shabtay\source\repos\Project9\Debug\Project9.exe

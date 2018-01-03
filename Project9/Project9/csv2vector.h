@@ -14,7 +14,7 @@ class csv2vector
 public:
 
 
-	std::vector <std::vector<std::string>>* items;
+	std::vector <std::vector<std::string> >* items;
 	std::vector <int>* map;
 	int numPlayer;
 	int numSoldier;
@@ -23,7 +23,7 @@ public:
 	std::vector <std::vector <std::string>*>* Objects;
 	
 	
-	csv2vector();
+	csv2vector(std::string);
 	std::vector <std::vector<std::string>>* csvToVector(std::string file);
 	std::vector <int>* VectorToInt(std::vector <std::vector<std::string>> items, int column, int   row, int setRow = 1);
 	std::vector <std::string>* VectorToString(std::vector <std::vector<std::string>> items, int column, int   row,int setRow = 1);

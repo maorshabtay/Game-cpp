@@ -46,8 +46,14 @@ std::string initItemPoint::findLast(std::vector<std::string>* vector) {
 }
 void initItemPoint::initObjectPoint() {
 	objects = new std::vector<Point2D>;
+	armorPoint = new std::vector<Point2D>;
+	weaponsPoint = new std::vector<Point2D>;
 	unsigned i = 0;
 		for (i = 0; i < _csv->Objects->size(); ++i) {
+			if ((_csv->Objects[0][i])[0][0]._Equal("Armor"))
+				armorPoint ->emplace_back(*stringToPoint(findLast(_csv->Objects[0][i])));
+			if ((_csv->Objects[0][i])[0][0]._Equal("weapon"))
+				weaponsPoint->emplace_back(*stringToPoint(findLast(_csv->Objects[0][i])));
 			(objects)->emplace_back(*stringToPoint(findLast(_csv->Objects[0][i])));
 			
 		}

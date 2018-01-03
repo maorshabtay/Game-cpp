@@ -22,16 +22,6 @@ void AllcoateObjects::buildObjVec(csv2vector* csv) {
 			buildSolid((csv->Objects[0][i]));
 		}
 	}
-	
-	for (Defence* d : *armorsObjVec) {
-		cout << d->getMyInstance() << " ";
-	}
-	for (Weapon* d : *weaponsObjVec) {
-		cout << d->getMyInstance() << " ";
-	}
-	for (Solid* d : *solidsObjVec) {
-		cout << d->getName() << " ";
-	}
 }
 
 void AllcoateObjects::buildDefence(std::vector<std::string>* bD) {

@@ -8,11 +8,11 @@
 class csv2player
 {
 public:
-	std::vector <std::vector<Point2D>>* playerMovesPoint;
+	std::vector <std::vector<Point2D> >* playerMovesPoint;
 
-	csv2player();
-	std::vector <std::vector<Point2D>>* csv2player::csvToVector(std::string file);
-	Point2D* csv2player::stringToPoint(std::string s);
+	csv2player(std::string);
+	std::vector <std::vector<Point2D> >* csvToVector(std::string file);
+	Point2D* stringToPoint(std::string s);
 
 };
 
